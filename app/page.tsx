@@ -1,6 +1,7 @@
 import { Carousel } from 'components/carousel';
 import { getCartId } from 'components/cart/actions';
 import { ThreeItemGrid } from 'components/grid/three-items';
+import { Hero } from 'components/home/hero';
 import Footer from 'components/layout/footer';
 import { Wrapper } from 'components/wrapper';
 import { getCart } from 'lib/fourthwall';
@@ -20,6 +21,7 @@ export default async function HomePage({ searchParams }: { searchParams: { curre
 
   return (
     <Wrapper currency={currency} cart={cart}>
+      <Hero />
       <ThreeItemGrid currency={currency} />
       <Carousel currency={currency} />
       <Footer />
