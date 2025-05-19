@@ -1,5 +1,6 @@
 import CartModal from 'components/cart/modal';
 import LogoSquare from 'components/logo-square';
+import { ThemeToggle } from 'components/theme-toggle';
 import { getCollections } from 'lib/fourthwall';
 import Link from 'next/link';
 import { CurrencySelector } from './currency';
@@ -39,8 +40,11 @@ export async function Navbar({currency}: {currency: string}) {
         </div>
         <div className="hidden justify-center md:flex md:w-1/3">
         </div>
-        <div className="flex justify-end md:w-1/3 gap-4">
-          <CurrencySelector currency={currency} />
+        <div className="flex justify-end md:w-1/3 items-center gap-4">
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <CurrencySelector currency={currency} />
+          </div>
           <CartModal />
         </div>
       </div>
